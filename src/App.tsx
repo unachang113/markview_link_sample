@@ -1,12 +1,8 @@
 import "./App.css";
-import Tiptap from "./Tiptap";
+import TiptapEditor from "./Tiptap";
 
 const App = () => {
-  return (
-    <div className="card">
-      <Tiptap />
-    </div>
-  );
+  return <TiptapEditor />;
 };
 
 export default App;
