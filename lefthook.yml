@@ -7,3 +7,6 @@ pre-commit:
     - name: biome
       run: pnpm biome:lint {staged_files}
       glob: "*.{js,ts,jsx,tsx,css,md,json}"
+    - name: vitest
+      run: pnpm test:ci {staged_files}
+      glob: "*.test.{ts,tsx}"
