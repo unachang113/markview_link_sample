@@ -110,8 +110,10 @@ const TiptapEditor = () => {
         .extendMarkRange("link")
         .setLink({ href: url })
         .run();
-    } catch (e) {
-      alert(e.message);
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        alert(e.message);
+      }
     }
   }, [editor]);
 
@@ -124,12 +126,14 @@ const TiptapEditor = () => {
       <div className="control-group">
         <div className="button-group">
           <button
+            type="button"
             onClick={setLink}
             className={editor.isActive("link") ? "is-active" : ""}
           >
             Set link
           </button>
           <button
+            type="button"
             onClick={() => editor.chain().focus().unsetLink().run()}
             disabled={!editor.isActive("link")}
           >
