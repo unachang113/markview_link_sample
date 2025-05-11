@@ -1,3 +1,4 @@
+import { MarkViewLinkSample } from "@/pages/mark-view-sample";
 import type { Route } from "./+types/mark-view-sample";
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
@@ -9,10 +10,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function MarkViewSample() {
-  return (
-    <div>
-      <h1>Mark View Sample</h1>
-      <p>This is a sample page for Mark View.</p>
-    </div>
-  );
+  return <MarkViewLinkSample />;
 }
